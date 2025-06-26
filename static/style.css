@@ -189,7 +189,7 @@ section {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.project h3, .research-paper h3, #contact h2, #skills h2 {
+.project h3, .research-paper h3 {
     margin-top: 0;
     color: #bb86fc;
     text-align: center;
@@ -234,9 +234,12 @@ section {
     text-align: center;
 }
 
+#projects h2,
+#research h2,
+#skills h2,
+#contact h2,
 #learning-roadmap h2 {
     margin-top: 0;
-    color: #bb86fc;
     text-align: center;
 }
 
@@ -331,6 +334,11 @@ section {
         padding: 1rem;
         margin: 0 1rem;
     }
+
+    /* Quote Section Mobile Styles */
+    #quote-section {
+        margin: 2rem; /* 2rem for mobile */
+    }
 }
 
 .btn {
@@ -363,6 +371,12 @@ section {
 @media (min-width: 769px) {
     #contact form {
         margin: 0 auto;
+    }
+
+    /* Quote Section PC Styles */
+    #quote-section {
+        margin: 2rem auto; /* 2rem auto for PC */
+        max-width: 700px; /* Narrower for PC */
     }
 }
 
@@ -520,4 +534,32 @@ footer .copyright {
         padding: 1rem;
         margin: 0 1rem;
     }
+}
+
+/* Quote Section Styles */
+#quote-section {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif; /* Unique font */
+    font-size: 2.2rem;
+    color: #bb86fc; /* Matching website's color theme */
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 0; /* Remove padding that was for pseudo-elements */
+}
+
+.quote-author {
+    font-size: 1.1rem;
+    color: #888; /* Different shade of text color */
 }
