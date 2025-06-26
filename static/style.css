@@ -417,6 +417,17 @@ footer {
     margin-top: 2rem;
 }
 
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links .btn {
+    margin: 0;
+}
+
 footer .download-btn {
     margin-bottom: 1rem;
 }
