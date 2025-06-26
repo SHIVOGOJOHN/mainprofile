@@ -1,0 +1,438 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #bb86fc;
+}
+
+header {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 2rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #bb86fc;
+    margin-right: 2rem;
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.header-text .job-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #bb86fc;
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.header-text .welcome-message {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.social-links-bottom {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.social-links-bottom .btn {
+    margin: 0 0.5rem;
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 1s; /* Stagger delay */
+}
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 2rem;
+    margin: 0 2rem;
+}
+
+/* Animation 1: Scroll-triggered Fade-in styles */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#contact {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+#contact:hover {
+    transform: translateY(-5px);
+    /* Animation 3: Enhanced Hover Effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project, .research-paper {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.project:hover, .research-paper:hover {
+    transform: translateY(-5px);
+    /* Animation 3: Enhanced Hover Effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project h3, .research-paper h3, #contact h2, #skills h2 {
+    margin-top: 0;
+    color: #bb86fc;
+    text-align: center;
+}
+
+#skills .skills-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#skills .skill-column {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    flex: 1;
+    min-width: 180px; /* Adjusted for 5 columns */
+    transition: transform 0.3s ease;
+}
+
+#skills .skill-column:hover {
+    transform: translateY(-5px);
+    /* Animation 3: Enhanced Hover Effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#skills .skill-column h3 {
+    color: #bb86fc;
+    margin-top: 0;
+    text-align: center;
+}
+
+#skills .skill-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills .skill-column ul li {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#learning-roadmap h2 {
+    margin-top: 0;
+    color: #bb86fc;
+    text-align: center;
+}
+
+#learning-roadmap .roadmap-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#learning-roadmap .roadmap-item {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    flex: 1;
+    min-width: 250px; /* Adjust as needed */
+    transition: transform 0.3s ease;
+}
+
+#learning-roadmap .roadmap-item:hover {
+    transform: translateY(-5px);
+    /* Animation 3: Enhanced Hover Effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#learning-roadmap .roadmap-item h3 {
+    color: #bb86fc;
+    margin-top: 0;
+    text-align: center;
+}
+
+#learning-roadmap .roadmap-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+#learning-roadmap .roadmap-item ul li {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #skills .skills-row {
+        flex-direction: column;
+    }
+
+    #skills .skill-column {
+        margin-bottom: 1rem;
+    }
+
+    #learning-roadmap .roadmap-container {
+        flex-direction: column;
+    }
+
+    #learning-roadmap .roadmap-item {
+        margin-bottom: 1rem;
+    }
+}
+
+.btn {
+    display: inline-block;
+    background-color: #bb86fc;
+    color: #121212;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Animation 4: Button Press Feedback */
+}
+
+.btn:hover {
+    background-color: #3700b3;
+}
+
+/* Animation 4: Button Press Feedback */
+.btn:active {
+    transform: scale(0.98);
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px; /* Adjust as needed */
+    margin: 0;
+}
+
+@media (min-width: 769px) {
+    #contact form {
+        margin: 0 auto;
+    }
+}
+
+#contact input, #contact textarea {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #e0e0e0;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    /* Animation 5: Form Input Focus Animation */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animation 5: Form Input Focus Animation */
+#contact input:focus, #contact textarea:focus {
+    border-color: #bb86fc;
+    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.5);
+    outline: none; /* Remove default outline */
+}
+
+#contact button {
+    cursor: pointer;
+    max-width: 200px; /* Adjust as needed */
+    margin: 0 auto; /* Center the button */
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #333;
+    margin-top: 2rem;
+}
+
+footer .download-btn {
+    margin-bottom: 1rem;
+}
+
+footer .titles {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+footer .copyright {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .profile-picture {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+    }
+
+    .header-text .job-title {
+        font-size: 1.2rem;
+    }
+
+    .header-text .welcome-message {
+        font-size: 1rem;
+    }
+
+    .social-links-bottom {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-links-bottom .btn {
+        margin: 0.5rem 0.5rem;
+    }
+
+    .project .btn, .research-paper .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+}
+
+#tech-showcase {
+    text-align: center;
+    padding: 2rem;
+    margin: 0 2rem;
+}
+
+#tech-showcase .download-btn {
+    margin-bottom: 2rem;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.tech-icons i {
+    font-size: 3rem;
+    color: #bb86fc;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons i:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .tech-icons i {
+        font-size: 2rem;
+    }
+}
