@@ -2,14 +2,14 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'jon6y.crae' # Change this to a strong, random key
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY") # Change this to a strong, random key
 
 # Flask-Mail configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com' # Replace with your SMTP server
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'techbidmarketplace@gmail.com' # Replace with your email
-app.config['MAIL_PASSWORD'] = 'vnot dyyh plrw syag' # Replace with your email password
+app.config['MAIL_PASSWORD'] = 'os.getenv("MAIL_PASSWORD") # Replace with your email password
 app.config['MAIL_DEFAULT_SENDER'] = 'techbidmarketplace@gmail.com' # Replace with your email
 
 mail = Mail(app)
@@ -107,4 +107,4 @@ def contact():
     return render_template('index.html') # Render index.html for GET requests to /contact or if there's an error
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
