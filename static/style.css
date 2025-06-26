@@ -13,6 +13,45 @@ body {
     object-fit: cover;
     margin-bottom: 1rem;
     border: 3px solid #bb86fc;
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+    cursor: pointer; /* Indicate it's clickable */
+    transition: all 0.3s ease-in-out; /* Smooth transition for enlargement */
+}
+
+/* Enlarged profile picture styles */
+.profile-picture.enlarged {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: auto !important; /* Allow width to adjust based on max-width/height */
+    height: auto !important; /* Allow height to adjust based on max-width/height */
+    max-width: 90vw !important; /* Take up 90% of viewport width */
+    max-height: 90vh !important; /* Limit height to 90% of viewport height */
+    object-fit: contain !important; /* Ensure entire image is visible */
+    border-radius: 0 !important; /* Remove circular border */
+    z-index: 1000 !important; /* Bring to front */
+    border: none !important; /* Remove border */
+}
+
+/* Overlay for enlarged image */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    z-index: 999; /* Behind the enlarged image */
+    display: none; /* Hidden by default */
+}
+
+.overlay.active {
+    display: block; /* Show when active */
 }
 
 header {
@@ -40,21 +79,12 @@ header {
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #bb86fc;
-    margin-right: 2rem;
-    /* Animation 2: Subtle Entrance Animation */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInSlideUp 0.8s ease-out forwards;
-    animation-delay: 0.2s;
+    margin-right: 3rem;
 }
 
 .header-text {
     text-align: left;
+    margin-left: 2rem;
 }
 
 .header-text h1 {
@@ -250,20 +280,56 @@ section {
 }
 
 @media (max-width: 768px) {
-    #skills .skills-row {
+    .header-container {
         flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
     }
 
-    #skills .skill-column {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
         margin-bottom: 1rem;
     }
 
-    #learning-roadmap .roadmap-container {
-        flex-direction: column;
+    .profile-picture {
+        margin-right: 0; /* Reset margin for mobile */
+        margin-bottom: 1rem;
     }
 
-    #learning-roadmap .roadmap-item {
-        margin-bottom: 1rem;
+    .header-text {
+        text-align: center;
+        margin-left: 0; /* Reset margin for mobile */
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+    }
+
+    .header-text .job-title {
+        font-size: 1.2rem;
+    }
+
+    .header-text .welcome-message {
+        font-size: 1rem;
+    }
+
+    .social-links-bottom {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-links-bottom .btn {
+        margin: 0.5rem 0.5rem;
+    }
+
+    .project .btn, .research-paper .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin: 0 1rem;
     }
 }
 
@@ -351,7 +417,58 @@ footer .copyright {
     color: #aaa;
 }
 
+#tech-showcase {
+    text-align: center;
+    padding: 2rem;
+    margin: 0 2rem;
+}
+
+#tech-showcase .download-btn {
+    margin-bottom: 2rem;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.tech-icons img {
+    width: 40px;
+    height: 40px;
+    margin: 10px; /* Add margin back for spacing */
+}
+
+.tech-icons i {
+    font-size: 3rem;
+    color: #bb86fc;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons i:hover {
+    transform: scale(1.2);
+}
+
 @media (max-width: 768px) {
+    .tech-icons img {
+        /* Calculate flex-basis for 5 columns with 1.5rem gap */
+        /* (100% - (4 * 1.5rem)) / 5 = (100% - 6rem) / 5 */
+        flex-basis: calc((100% - 6rem) / 5);
+        max-width: 100%; /* Ensure it doesn't overflow its flex-basis */
+        height: auto;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        margin: 0; /* Remove individual margins, gap handles spacing */
+    }
+
+    .tech-icons {
+        padding: 0; /* Remove padding that might affect calc */
+    }
+
+    .tech-icons i {
+        font-size: 2rem;
+    }
+
     .header-container {
         flex-direction: column;
         align-items: center;
@@ -365,12 +482,13 @@ footer .copyright {
     }
 
     .profile-picture {
-        margin-right: 0;
+        margin-right: 0; /* Reset margin for mobile */
         margin-bottom: 1rem;
     }
 
     .header-text {
         text-align: center;
+        margin-left: 0; /* Reset margin for mobile */
     }
 
     .header-text h1 {
@@ -401,38 +519,5 @@ footer .copyright {
     section {
         padding: 1rem;
         margin: 0 1rem;
-    }
-}
-
-#tech-showcase {
-    text-align: center;
-    padding: 2rem;
-    margin: 0 2rem;
-}
-
-#tech-showcase .download-btn {
-    margin-bottom: 2rem;
-}
-
-.tech-icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.tech-icons i {
-    font-size: 3rem;
-    color: #bb86fc;
-    transition: transform 0.3s ease;
-}
-
-.tech-icons i:hover {
-    transform: scale(1.2);
-}
-
-@media (max-width: 768px) {
-    .tech-icons i {
-        font-size: 2rem;
     }
 }
