@@ -269,6 +269,10 @@ section {
     text-align: center;
 }
 
+.view-all-btn-container {
+    text-align: center;
+}
+
 #learning-roadmap .roadmap-container {
     display: flex;
     justify-content: space-around;
