@@ -214,27 +214,13 @@ section {
     gap: 1rem;
 }
 
-#skills .skills-row-single {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    max-width: calc( (300px * 4) + (1rem * 3) ); /* Match width of 4 columns + 3 gaps */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#skills .skills-row-single .skill-column {
-    flex: 1;
-    min-width: 300px;
-}
-
 #skills .skill-column {
     background-color: #1e1e1e;
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid #333;
-    flex: 1;
-    min-width: 300px; /* Adjusted for 5 columns */
+    flex: 1 1 calc(20% - 1rem); /* Distribute 5 items evenly with gap */
+    min-width: 180px; /* Minimum width to prevent excessive shrinking */
     transition: transform 0.3s ease;
 }
 
