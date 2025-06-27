@@ -214,6 +214,17 @@ section {
     gap: 1rem;
 }
 
+#skills .skills-row-single {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#skills .skills-row-single .skill-column {
+    flex: 0 0 180px; /* Fixed width to match other columns */
+    max-width: 180px; /* Ensure it doesn't grow too wide */
+}
+
 #skills .skill-column {
     background-color: #1e1e1e;
     padding: 1.5rem;
