@@ -123,7 +123,7 @@ header {
     justify-content: flex-end;
     margin-top: 1.5rem;
     width: 100%;
-    gap: 0.35rem; /* Reduced by 65% */
+    gap: 0.175rem; /* Reduced by half again */
 }
 
 .social-links-bottom .btn {
