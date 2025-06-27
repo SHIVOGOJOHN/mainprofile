@@ -433,7 +433,7 @@ footer {
 .footer-links {
     display: flex;
     justify-content: center;
-    gap: 0.25rem; /* Reduced gap by half */
+    gap: 0; /* Reduced gap to zero */
     margin-bottom: 1rem;
 }
 
