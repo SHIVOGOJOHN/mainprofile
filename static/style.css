@@ -342,14 +342,18 @@ section {
 }
 
 .btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #bb86fc;
     color: #121212;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem; /* Equal padding on all sides */
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.1s ease; /* Animation 4: Button Press Feedback */
+    width: 2.5rem; /* Set a fixed width and height for square buttons */
+    height: 2.5rem;
 }
 
 .btn:hover {
