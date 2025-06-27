@@ -230,8 +230,7 @@ section {
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid #333;
-    flex: 1;
-    min-width: 180px; /* Adjusted for 5 columns */
+    width: 180px; /* Fixed width for consistent sizing */
     transition: transform 0.3s ease;
 }
 
