@@ -126,12 +126,22 @@ header {
 }
 
 .social-links-bottom .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem; /* Fixed width for square button */
+    height: 2.5rem; /* Fixed height for square button */
+    padding: 0; /* Remove padding to center icon */
     margin: 0 0.5rem;
     /* Animation 2: Subtle Entrance Animation */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInSlideUp 0.8s ease-out forwards;
     animation-delay: 1s; /* Stagger delay */
+}
+
+.social-links-bottom .btn i {
+    margin: 0; /* Remove any default icon margin */
 }
 
 @keyframes fadeInSlideUp {
@@ -429,6 +439,12 @@ footer {
 }
 
 .footer-links .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem; /* Fixed width for square button */
+    height: 2.5rem; /* Fixed height for square button */
+    padding: 0; /* Remove padding to center icon */
     background-color: #ffffff; /* White background */
     color: #121212; /* Black text/icons */
 }
@@ -439,6 +455,7 @@ footer {
 
 .footer-links .btn i {
     color: #121212; /* Ensure icons are black */
+    margin: 0; /* Remove any default icon margin */
 }
 
 footer .download-btn {
