@@ -218,14 +218,14 @@ section {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
-    max-width: calc( (180px * 4) + (1rem * 3) ); /* Match width of 4 columns + 3 gaps */
+    max-width: calc( (250px * 4) + (1rem * 3) ); /* Match width of 4 columns + 3 gaps */
     margin-left: auto;
     margin-right: auto;
 }
 
 #skills .skills-row-single .skill-column {
     flex: 1;
-    min-width: 180px;
+    min-width: 250px;
 }
 
 #skills .skill-column {
@@ -234,7 +234,7 @@ section {
     border-radius: 8px;
     border: 1px solid #333;
     flex: 1;
-    min-width: 180px; /* Adjusted for 5 columns */
+    min-width: 250px; /* Adjusted for 5 columns */
     transition: transform 0.3s ease;
 }
 
