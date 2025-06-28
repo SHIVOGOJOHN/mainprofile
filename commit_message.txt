@@ -1,1 +1,1 @@
-Fix: Revert accidental changes to top social links in index.html
+Fix: Center 'View All Projects' and 'View All Research Papers' buttons.
