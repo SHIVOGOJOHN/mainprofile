@@ -1,0 +1,693 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #bb86fc;
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+    cursor: pointer; /* Indicate it's clickable */
+    transition: all 0.3s ease-in-out; /* Smooth transition for enlargement */
+}
+
+/* Enlarged profile picture styles */
+.profile-picture.enlarged {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: auto !important; /* Allow width to adjust based on max-width/height */
+    height: auto !important; /* Allow height to adjust based on max-width/height */
+    max-width: 90vw !important; /* Take up 90% of viewport width */
+    max-height: 90vh !important; /* Limit height to 90% of viewport height */
+    object-fit: contain !important; /* Ensure entire image is visible */
+    border-radius: 0 !important; /* Remove circular border */
+    z-index: 1000 !important; /* Bring to front */
+    border: none !important; /* Remove border */
+}
+
+/* Overlay for enlarged image */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    z-index: 999; /* Behind the enlarged image */
+    display: none; /* Hidden by default */
+}
+
+.overlay.active {
+    display: block; /* Show when active */
+}
+
+header {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 2rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.profile-picture {
+    margin-right: 3rem;
+}
+
+.header-text {
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.5rem;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aca906a (Project update)
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fcb3f4d (Updated project1)
+>>>>>>> aca906a (Project update)
+}
+
+.header-text .job-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #bb86fc;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aca906a (Project update)
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fcb3f4d (Updated project1)
+>>>>>>> aca906a (Project update)
+}
+
+.header-text .welcome-message {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aca906a (Project update)
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fcb3f4d (Updated project1)
+>>>>>>> aca906a (Project update)
+}
+
+.social-links-bottom {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    width: 100%;
+    gap: 0.25rem; /* Same as footer buttons */
+}
+
+.social-links-bottom .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem; /* Smaller fixed width for square button */
+    height: 2rem; /* Smaller fixed height for square button */
+    padding: 0; /* Remove padding to center icon */
+    margin: 0 0.5rem;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aca906a (Project update)
+    /* Animation 2: Subtle Entrance Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 1s; /* Stagger delay */
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fcb3f4d (Updated project1)
+>>>>>>> aca906a (Project update)
+}
+
+.social-links-bottom .btn i {
+    font-size: 1.2rem; /* Explicit font size for icon */
+    margin: 0; /* Remove any default icon margin */
+}
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 2rem;
+    margin: 0 2rem;
+}
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+/* Quote Section Styles */
+#quote-section {
+    background-color: #1e1e1e;
+    padding: 3rem;
+    border-radius: 8px;
+    border: 2px solid #bb86fc;
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.5);
+    margin: 2rem auto 5rem auto; /* Top, Right, Bottom, Left */
+    max-width: 700px; /* Constrain width on all screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+>>>>>>> fcb3f4d (Updated project1)
+>>>>>>> aca906a (Project update)
+/* Animation 1: Scroll-triggered Fade-in styles */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#contact {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+#contact:hover {
+    transform: translateY(-5px);
+    /* Animation 3: Enhanced Hover Effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project, .research-paper {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.project:hover, .research-paper:hover {
+    transform: translateY(-5px);
+    /* Animation 3: Enhanced Hover Effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project h3, .research-paper h3 {
+    margin-top: 0;
+    color: #bb86fc;
+    text-align: center;
+}
+
+#skills .skills-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#skills .skill-column {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    flex: 1 1 calc(20% - 1rem); /* Distribute 5 items evenly with gap */
+    min-width: 180px; /* Minimum width to prevent excessive shrinking */
+    transition: transform 0.3s ease;
+}
+
+#skills .skill-column:hover {
+    transform: translateY(-5px);
+    /* Animation 3: Enhanced Hover Effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#skills .skill-column h3 {
+    color: #bb86fc;
+    margin-top: 0;
+    text-align: center;
+}
+
+#skills .skill-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills .skill-column ul li {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#projects h2,
+#research h2,
+#skills h2,
+#contact h2,
+#learning-roadmap h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.view-all-btn-container {
+    text-align: center;
+}
+
+#learning-roadmap .roadmap-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#learning-roadmap .roadmap-item {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    flex: 1;
+    min-width: 250px; /* Adjust as needed */
+    transition: transform 0.3s ease;
+}
+
+#learning-roadmap .roadmap-item:hover {
+    transform: translateY(-5px);
+    /* Animation 3: Enhanced Hover Effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#learning-roadmap .roadmap-item h3 {
+    color: #bb86fc;
+    margin-top: 0;
+    text-align: center;
+}
+
+#learning-roadmap .roadmap-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+#learning-roadmap .roadmap-item ul li {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .profile-picture {
+        margin-right: 0; /* Reset margin for mobile */
+        margin-bottom: 1rem;
+    }
+
+    .header-text {
+        text-align: center;
+        margin-left: 0; /* Reset margin for mobile */
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+    }
+
+    .header-text .job-title {
+        font-size: 1.2rem;
+    }
+
+    .header-text .welcome-message {
+        font-size: 1rem;
+    }
+
+    .social-links-bottom {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-links-bottom .btn {
+        margin: 0.5rem 0.5rem;
+    }
+
+    .project .btn, .research-paper .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    /* Quote Section Mobile Styles */
+    #quote-section {
+        margin: 2rem; /* 2rem for mobile */
+    }
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #bb86fc;
+    color: #121212;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Animation 4: Button Press Feedback */
+}
+
+.btn:hover {
+    background-color: #3700b3;
+}
+
+/* Animation 4: Button Press Feedback */
+.btn:active {
+    transform: scale(0.98);
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px; /* Adjust as needed */
+    margin: 0;
+}
+
+@media (min-width: 769px) {
+    #contact form {
+        margin: 0 auto;
+    }
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aca906a (Project update)
+    /* Quote Section PC Styles */
+    #quote-section {
+        margin: 2rem auto; /* 2rem auto for PC */
+        max-width: 700px; /* Narrower for PC */
+    }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fcb3f4d (Updated project1)
+>>>>>>> aca906a (Project update)
+}
+
+#contact input, #contact textarea {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #e0e0e0;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    /* Animation 5: Form Input Focus Animation */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animation 5: Form Input Focus Animation */
+#contact input:focus, #contact textarea:focus {
+    border-color: #bb86fc;
+    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.5);
+    outline: none; /* Remove default outline */
+}
+
+#contact button {
+    cursor: pointer;
+    max-width: 200px; /* Adjust as needed */
+    margin: 0 auto; /* Center the button */
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #333;
+    margin-top: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem; /* Restored spacing */
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #121212; /* Black icon color */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allow margin/padding if needed for spacing between icons */
+}
+
+.footer-links a:hover {
+    opacity: 0.7; /* Subtle hover effect */
+}
+
+.footer-links a i {
+    font-size: 1.5rem; /* Adjust icon size as needed */
+    margin: 0; /* Ensure no extra margin on the icon itself */
+}
+
+footer .download-btn {
+    margin-bottom: 1rem;
+}
+
+footer .titles {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+footer .copyright {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+#tech-showcase {
+    text-align: center;
+    padding: 2rem;
+    margin: 0 2rem;
+}
+
+#tech-showcase .download-btn {
+    margin-bottom: 2rem;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.tech-icons img {
+    width: 40px;
+    height: 40px;
+    margin: 10px; /* Add margin back for spacing */
+}
+
+.tech-icons i {
+    font-size: 3rem;
+    color: #bb86fc;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons i:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .tech-icons img {
+        /* Calculate flex-basis for 5 columns with 1.5rem gap */
+        /* (100% - (4 * 1.5rem)) / 5 = (100% - 6rem) / 5 */
+        flex-basis: calc((100% - 6rem) / 5);
+        max-width: 100%; /* Ensure it doesn't overflow its flex-basis */
+        height: auto;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        margin: 0; /* Remove individual margins, gap handles spacing */
+    }
+
+    .tech-icons {
+        padding: 0; /* Remove padding that might affect calc */
+    }
+
+    .tech-icons i {
+        font-size: 2rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .profile-picture {
+        margin-right: 0; /* Reset margin for mobile */
+        margin-bottom: 1rem;
+    }
+
+    .header-text {
+        text-align: center;
+        margin-left: 0; /* Reset margin for mobile */
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+    }
+
+    .header-text .job-title {
+        font-size: 1.2rem;
+    }
+
+    .header-text .welcome-message {
+        font-size: 1rem;
+    }
+
+    .social-links-bottom {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-links-bottom .btn {
+        margin: 0.5rem 0.5rem;
+    }
+
+    .project .btn, .research-paper .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aca906a (Project update)
+}
+
+/* Quote Section Styles */
+#quote-section {
+    background-color: #1e1e1e;
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.quote-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif; /* Unique font */
+    font-size: 1.8rem;
+    color: #bb86fc; /* Matching website's color theme */
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 0; /* Remove padding that was for pseudo-elements */
+}
+
+.quote-author {
+    font-size: 1.1rem;
+    color: #888; /* Different shade of text color */
+<<<<<<< HEAD
+=======
+=======
+
+    /* Quote Section Mobile Styles */
+    #quote-section {
+        margin: 2rem; /* 2rem for mobile */
+    }
+
+    /* Disable fade-in animation on mobile */
+    .fade-in-section {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
+    }
+>>>>>>> fcb3f4d (Updated project1)
+>>>>>>> aca906a (Project update)
+}

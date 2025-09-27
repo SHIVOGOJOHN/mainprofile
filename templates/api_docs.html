@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="profile-container">
+                <img src="https://avatars.githubusercontent.com/u/169674746?s=400&u=98982bc9fafdfbc084b6426148a421fe35c80384&v=4" alt="Profile Picture" class="profile-picture">
+                <div class="header-text">
+                    <a href="{{ url_for('index') }}" style="text-decoration: none; color: inherit;"><h1>Shivogo John</h1></a>
+                    <p class="job-title">Machine Learning Engineer & Researcher</p>
+                    <p class="welcome-message"><span id="typed-text"></span></p>
+                </div>
+            </div>
+            <div class="social-links-bottom">
+                <a href="https://github.com/SHIVOGOJOHN" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shivogo-john-256473329/" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:shivogojohn@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+254704234829" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-phone"></i></a>
+                
+                <a href="https://medium.com/@shivogojohn" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i></a>
+            </div>
+            </div>
+    </header>
+
+    <section id="api-docs" class="fade-in-section">
+        <a href="{{ url_for('project_blockchain_ai') }}" class="btn" style="margin-bottom: 1rem;"><i class="fas fa-arrow-left"></i> Back to Project Details</a>
+        
+        <h1>API Documentation</h1>
+
+        <h2>Prediction API</h2>
+        <p>This API allows you to get predictions from the federated learning model for Store A.</p>
+
+        <h3>Endpoint</h3>
+        <p><code>POST https://federatedsys.onrender.com/fed_sys</code></p>
+
+        <h3>Request Body</h3>
+        <p>The request body should be a JSON object with the following fields:</p>
+        <ul>
+            <li><code>Age</code>: integer</li>
+            <li><code>Income</code>: float</li>
+            <li><code>Loyalty_Score</code>: integer</li>
+            <li><code>Prior_Purchases</code>: integer</li>
+            <li><code>Avg_Spend</code>: float</li>
+            <li><code>Recency</code>: integer</li>
+            <li><code>Browsing_Time</code>: float</li>
+            <li><code>Clicks_On_Promo</code>: integer</li>
+            <li><code>Purchase_Frequency</code>: float</li>
+            <li><code>High_Value_Customer</code>: integer</li>
+            <li><code>Engagement_Score</code>: integer</li>
+            <li><code>Gender_Male</code>: integer</li>
+            <li><code>Promotion_Type_Discount</code>: integer</li>
+            <li><code>Promotion_Type_FlashSale</code>: integer</li>
+            <li><code>Promotion_Type_LoyaltyPoints</code>: integer</li>
+            <li><code>Channel_Email</code>: integer</li>
+            <li><code>Channel_In_store</code>: integer</li>
+            <li><code>Channel_SMS</code>: integer</li>
+            <li><code>Time_of_Day_Evening</code>: integer</li>
+            <li><code>Time_of_Day_Morning</code>: integer</li>
+        </ul>
+
+        <h3>Example Request</h3>
+        <pre><code>
+{
+  "Age": 35,
+  "Income": 50000.0,
+  "Loyalty_Score": 500,
+  "Prior_Purchases": 10,
+  "Avg_Spend": 75.5,
+  "Recency": 30,
+  "Browsing_Time": 120.0,
+  "Clicks_On_Promo": 2,
+  "Purchase_Frequency": 0.5,
+  "High_Value_Customer": 0,
+  "Engagement_Score": 3,
+  "Gender_Male": 1,
+  "Promotion_Type_Discount": 0,
+  "Promotion_Type_FlashSale": 1,
+  "Promotion_Type_LoyaltyPoints": 0,
+  "Channel_Email": 1,
+  "Channel_In_store": 0,
+  "Channel_SMS": 0,
+  "Time_of_Day_Evening": 1,
+  "Time_of_Day_Morning": 0
+}
+        </code></pre>
+
+        <h3>Response</h3>
+        <p>The response will be a JSON object with the following fields:</p>
+        <ul>
+            <li><code>prediction</code>: The binary prediction (0 or 1).</li>
+            <li><code>probability</code>: The prediction probability (float).</li>
+            <li><code>model_version</code>: The version of the model used for the prediction.</li>
+            <li><code>last_updated</code>: The timestamp of when the model was last updated.</li>
+            <li><code>feature_importances</code>: A JSON object with the SHAP values for each feature.</li>
+            <li><code>shap_plot_data</code>: A JSON object with the data needed to generate a SHAP force plot.</li>
+        </ul>
+
+    </section>
+
+    <footer>
+        <p class="titles">Data analyst | Researcher | Data Engineer | Machine Learning Engineer | Statistician</p>
+        <p class="copyright">&copy; 2025 Shivogo John. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const textElement = document.getElementById('typed-text');
+        const fullText = "Glad you dropped by. I'm passionate about making sense of data and building impactful solutions with it. Feel free to have a look around.";
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < fullText.length) {
+                textElement.textContent += fullText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 15); // Adjust typing speed here (milliseconds)
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', typeText);
+
+        // Profile picture enlargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePicture = document.querySelector('.profile-picture');
+            const body = document.body;
+            let overlay = document.querySelector('.overlay');
+
+            // Create overlay if it doesn't exist
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                body.appendChild(overlay);
+            }
+
+            profilePicture.addEventListener('click', function() {
+                profilePicture.classList.toggle('enlarged');
+                overlay.classList.toggle('active');
+                // Prevent scrolling when enlarged
+                body.style.overflow = profilePicture.classList.contains('enlarged') ? 'hidden' : '';
+            });
+
+            overlay.addEventListener('click', function() {
+                profilePicture.classList.remove('enlarged');
+                overlay.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+    </script>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const flashMessages = document.querySelector('.flashes');
+                    if (flashMessages) {
+                        setTimeout(function() {
+                            flashMessages.style.display = 'none';
+                        }, 3000); // 3000 milliseconds = 3 seconds
+                    }
+                });
+            </script>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federated Learning with Blockchain & IPFS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="profile-container">
+                <img src="https://avatars.githubusercontent.com/u/169674746?s=400&u=98982bc9fafdfbc084b6426148a421fe35c80384&v=4" alt="Profile Picture" class="profile-picture">
+                <div class="header-text">
+                    <a href="{{ url_for('index') }}" style="text-decoration: none; color: inherit;"><h1>Shivogo John</h1></a>
+                    <p class="job-title">Machine Learning Engineer & Researcher</p>
+                    <p class="welcome-message"><span id="typed-text"></span></p>
+                </div>
+            </div>
+            <div class="social-links-bottom">
+                <a href="https://github.com/SHIVOGOJOHN" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shivogo-john-256473329/" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:shivogojohn@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+254704234829" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-phone"></i></a>
+                
+                <a href="https://medium.com/@shivogojohn" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i></a>
+            </div>
+            </div>
+    </header>
+
+    <section id="project-details">
+        <a href="{{ url_for('all_projects') }}" class="btn" style="margin-bottom: 1rem;"><i class="fas fa-arrow-left"></i> Back to All Projects</a>
+        
+        <h1>🧠 Federated Learning with Blockchain & IPFS</h1>
+
+        <h2>📌 Project Overview</h2>
+        <p>This project integrates <strong>Federated Learning (FL)</strong> with <strong>Blockchain</strong> and <strong>IPFS</strong> to create a decentralized, auditable, and transparent AI training ecosystem. The system ensures that local data from different clients (e.g., stores, hospitals, IoT devices) remains private, while model updates are aggregated securely on a central node. Each aggregation round is recorded on the Ethereum blockchain for transparency, and the aggregated global model is stored on IPFS for decentralized access.</p>
+
+        <h2>⚙️ System Architecture</h2>
+        <img src="{{ url_for('static', filename='FedBlockChainAI.png') }}" alt="System Diagram" style="width:100%; max-width: 800px; margin: 1rem 0;">
+
+        <h3>1. Clients (Local Nodes)</h3>
+        <ul>
+            <li>Each client (Raspberry Pi or Jetson Nano device) trains a local ML/DL model using its private data.</li>
+            <li>Frameworks used: TensorFlow, Scikit-learn, Docker, FastAPI, Flask.</li>
+            <li>Example: <strong>Client A Prediction System (Store A)</strong>
+                <ul>
+                    <li>URL: <a href="https://mainstore-rjmb.onrender.com/" target="_blank">Store A Prediction System</a></li>
+                    <li>Input data is used locally to predict outcomes and retrain Store A’s local models.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>2. Central Server (Aggregator Node)</h3>
+        <ul>
+            <li>Runs <strong>Flower (FL framework)</strong> for model aggregation.</li>
+            <li>OS: Windows/Linux.</li>
+            <li>Automation via Task Scheduler / Cron jobs.</li>
+            <li>Collects model weights, aggregates them, and produces a global model.</li>
+        </ul>
+
+        <h3>3. IPFS Storage</h3>
+        <ul>
+            <li>The global model is saved to IPFS after each aggregation.</li>
+            <li>An <strong>IPFS content hash</strong> is generated to ensure immutability and integrity.</li>
+        </ul>
+
+        <h3>4. Ethereum Blockchain Logging</h3>
+        <ul>
+            <li>Each training round’s metadata (accuracy, timestamp, round number, IPFS hash) is recorded on the <strong>Ethereum Sepolia testnet</strong>.</li>
+            <li>Example Transaction (Round 10): <a href="https://sepolia.etherscan.io/tx/0x008a3ef87cb15c2490b8e3029a356812b217e8c2e49389c62945eb125a25722a" target="_blank">Sepolia Transaction on Etherscan</a></li>
+        </ul>
+
+        <h3>5. Dashboard & Visualization</h3>
+        <ul>
+            <li>A <strong>Streamlit Dashboard</strong> visualizes metrics such as:
+                <ul>
+                    <li>Global accuracy trends</li>
+                    <li>Node-specific accuracy contributions</li>
+                    <li>Blockchain transaction logs</li>
+                </ul>
+            </li>
+            <li>URL: <a href="https://fedsysdashboard.onrender.com/" target="_blank">Federated System Dashboard</a></li>
+            <li>📊 Observation: <strong>Global accuracy improves with increased training rounds</strong>, showing the positive impact of collaboration.</li>
+        </ul>
+
+        <h2>📂 Data Flow Example</h2>
+        <ol>
+            <li><strong>Client A (Store A)</strong> submits input data to its prediction system.</li>
+            <li>Local model predicts output and updates its parameters.</li>
+            <li>Model weights are sent to the central aggregator (not raw data).</li>
+            <li>Aggregator combines weights from all clients → generates a global model.</li>
+            <li>Global model stored on IPFS + metadata logged to blockchain.</li>
+            <li>Dashboard updates global accuracy & blockchain records.</li>
+            <li>Improved model sent back to clients for further training → cycle continues.</li>
+        </ol>
+
+        <h2>🛠️ Frameworks & Tools Used</h2>
+        <ul>
+            <li><strong>Machine Learning</strong>: TensorFlow, Scikit-learn</li>
+            <li><strong>Federated Learning</strong>: Flower (FL framework)</li>
+            <li><strong>Web Apps (Client-side)</strong>: FastAPI, Flask, Dockerized deployment</li>
+            <li><strong>Blockchain & Storage</strong>: Ethereum Sepolia testnet, Hardhat + Web3.py for smart contract & transactions, IPFS for decentralized model storage</li>
+            <li><strong>Dashboards</strong>: Streamlit (real-time monitoring)</li>
+            <li><strong>Hardware (Client Nodes)</strong>: Raspberry Pi, NVIDIA Jetson Nano</li>
+        </ul>
+
+        <h2>🔗 Useful Links</h2>
+        <ul>
+            <li><strong>Store A Prediction System</strong>: <a href="https://mainstore-rjmb.onrender.com/" target="_blank">https://mainstore-rjmb.onrender.com/</a></li>
+            <li><strong>Dashboard for Metrics</strong>: <a href="https://fedsysdashboard.onrender.com/" target="_blank">https://fedsysdashboard.onrender.com/</a></li>
+            <li><strong>Sample Blockchain Transaction (Round 10)</strong>: <a href="https://sepolia.etherscan.io/tx/0x008a3ef87cb15c2490b8e3029a356812b217e8c2e49389c62945eb125a25722a" target="_blank">Etherscan Link</a></li>
+            <li><strong>Store A - Prediction API Endpoint</strong>: <a href="https://federatedsys.onrender.com/fed_sys" target="_blank">https://federatedsys.onrender.com/fed_sys</a></li>
+            <li><strong>Store A - API Documentation</strong>: <a href="{{ url_for('api_docs') }}">View API Docs</a></li>
+        </ul>
+
+        <h2><i class="fas fa-envelope"></i> Contact & Code Access</h2>
+        <p>I am happy to discuss this project, answer any questions, or provide access to the source code for the client server and blockchain components upon request. Please feel free to reach out to me.</p>
+        <a href="{{ url_for('index') }}#contact" class="btn"><i class="fas fa-paper-plane"></i> Contact Me</a>
+
+        <h2>📖 Documentation</h2>
+        <ul>
+            <li><strong>Federated Learning (Flower):</strong> <a href="https://flower.dev" target="_blank">https://flower.dev</a></li>
+            <li><strong>Ethereum Sepolia Testnet:</strong> <a href="https://ethereum.org/en/developers/docs/networks/sepolia/" target="_blank">Sepolia Docs</a></li>
+            <li><strong>IPFS Protocol:</strong> <a href="https://ipfs.tech" target="_blank">https://ipfs.tech</a></li>
+            <li><strong>Streamlit Dashboards:</strong> <a href="https://streamlit.io" target="_blank">https://streamlit.io</a></li>
+        </ul>
+
+        <h2>🌟 Key Contributions of This System</h2>
+        <ol>
+            <li><strong>Data Privacy</strong> – Local training ensures raw data never leaves the client.</li>
+            <li><strong>Transparency</strong> – Blockchain records provide immutable proof of training rounds.</li>
+            <li><strong>Integrity</strong> – Models stored on IPFS with unique hashes for verification.</li>
+            <li><strong>Scalability</strong> – Supports multiple clients/nodes with lightweight devices.</li>
+            <li><strong>Improved Accuracy</strong> – Collaborative training boosts overall model performance.</li>
+        </ol>
+
+        <h2>Linear Walkthrough</h2>
+        <ol>
+            <li><strong>Local data and prediction (Client side)</strong>: Each client (Store A, Store B, Store C) collects and stores its own data locally. This data never leaves the client in raw form. Each client runs a local prediction service (a small app on a Raspberry Pi / Jetson / server). The service: accepts input (user form or sensor data), uses the client’s local model to return a prediction, and optionally stores the new training example locally for later training. Clients prepare local training datasets from their own stored examples (preprocessing, normalization, etc.). Output at this stage: updated local dataset and the client’s local model parameters (weights) after local updates.</li>
+            <li><strong>Local training (per client)</strong>: At scheduled intervals or on demand, each client trains its local model on its own data (one or more local epochs). Training produces an updated set of model parameters (the numerical “weights” and bias values). The client packages only the model update (the weights and metadata such as number of samples) — not the original data — for transmission. Output at this stage: a model-update artifact (weights + sample count + client ID).</li>
+            <li><strong>Communication to the aggregator (server)</strong>: Clients send their model-update artifacts to the central aggregator (the device/server in your chassis). This happens over the network (secure channel/VPN). The aggregator collects updates from all participating clients for the current round. Artifacts transmitted: client ID, weights, num_samples, optional local metrics (accuracy/loss).</li>
+            <li><strong>Aggregation (server / Flower)</strong>: The aggregator runs the federated-learning coordinator (Flower) which: receives all client updates for the round, performs a weighted aggregation (e.g., FedAvg) using sample counts to compute the new global model weights, optionally evaluates the aggregated model on a validation dataset. The aggregated model is finalized for that round. Output at this stage: global_model_round_N — the aggregated model weights.</li>
+            <li><strong>Persisting the global model (server)</strong>: The server saves the aggregated model to disk in a designated folder (e.g., global_models/global_round_N.h5). This saved file is the exact binary representation of the global model at that round. Artifact created: saved model file per round.</li>
+            <li><strong>Decentralized storage (IPFS)</strong>: The server uploads the saved model file to IPFS (or a pinning service). IPFS returns a content identifier (CID / IPFS hash) that uniquely fingerprints that file. Optionally the server pins the file so it remains available on the IPFS network. Output at this stage: ipfs_hash for the aggregated model.</li>
+            <li><strong>On-chain audit (blockchain)</strong>: The server prepares a small metadata record for the round: e.g., round number, global accuracy, per-node accuracies, timestamp, notes, and the ipfs_hash. The server submits a transaction to the private/public blockchain (e.g., Sepolia testnet) that writes or emits this metadata using a smart contract. The blockchain processes the transaction and returns a transaction ID (tx hash / block reference) once confirmed. Output at this stage: blockchain transaction ID that proves the model file and metadata were recorded at a particular time.</li>
+            <li><strong>Off-chain ledger (coordinator)</strong>: The server appends or updates an off-chain ledger (a JSON file or database) with the round’s full entry: round number, timestamp, global accuracy, node accuracies, ipfs_hash, and the on-chain block_tx. This ledger is the immediate source for dashboards and quick lookups. Artifact created: ledger.json or DB record for the round.</li>
+            <li><strong>Dashboard & monitoring</strong>: The Streamlit dashboard reads the ledger and/or queries the blockchain and IPFS to display: global accuracy trend by round, per-client contributions and accuracies, IPFS hash and a link to the model file, blockchain transaction IDs with links to Etherscan (or explorer). Stakeholders can visually verify model improvement and click through to the blockchain or IPFS for audit. Visible effects: charts, tables, and links showing provenance and performance.</li>
+            <li><strong>Model distribution back to clients</strong>: The server makes the latest global model available to clients (push or clients fetch). Options: Push: server sends the new weights to each client automatically. Pull: clients periodically check the server or GitHub/IPFS and download the latest model. Each client updates its local model with the new global weights and resumes local training/prediction. Result: clients start the next round from the improved global model.</li>
+            <li><strong>Optional: Continuous integration (GitHub / Render / Flask)</strong>: The server can optionally upload each saved global model to a GitHub repo (or cloud storage). Web apps (hosted on Render) can fetch the latest model from GitHub/IPFS and use it for live predictions or extra fine-tuning on user input. This ties your FL cycle into web endpoints for external users. Benefit: easy distribution and history tracking of model files.</li>
+            <li><strong>Audit & verification loop (how an auditor checks)</strong>: Auditor reads the ledger entry for a round and gets the ipfs_hash and block_tx. Auditor fetches the model from IPFS using the ipfs_hash and computes its fingerprint. Auditor verifies the on-chain record (transaction & event) matches the ipfs_hash and timestamp. Auditor can reproduce metrics by loading the model and running a validation dataset if permitted. Outcome: verifiable proof that the model existed and was recorded at that time.</li>
+        </ol>
+
+        <h2>Practical notes, risks and recommended practices</h2>
+        <ul>
+            <li><strong>Privacy</strong>: raw client data never leaves clients. Only model updates are transmitted.</li>
+            <li><strong>Availability</strong>: ensure IPFS pinning or cloud backup so model files remain retrievable.</li>
+            <li><strong>Key management</strong>: protect the private key used to sign blockchain transactions. Use environment secrets or hardware keys for production.</li>
+            <li><strong>Audit batching</strong>: to improve throughput, consider uploading and recording on-chain every N rounds (checkpointing) instead of every round.</li>
+            <li><strong>Monitoring</strong>: log times for local training, communication, aggregation, IPFS upload, and tx confirmation to measure rounds/minute and spot bottlenecks.</li>
+            <li><strong>Resilience</strong>: handle clients dropping out; strategy should tolerate missing updates and proceed when minimum clients respond.</li>
+        </ul>
+
+        <h2>Quick linear summary</h2>
+        <ol>
+            <li>Clients train locally and produce weight updates.</li>
+            <li>Clients send updates to the central aggregator.</li>
+            <li>Aggregator performs FedAvg to create the global model.</li>
+            <li>Aggregated model is saved to disk.</li>
+            <li>Saved model is uploaded to IPFS → returns ipfs_hash.</li>
+            <li>Aggregation metadata + ipfs_hash is recorded on the blockchain → returns block_tx.</li>
+            <li>Ledger is updated and dashboard published.</li>
+            <li>Clients fetch or receive the new global model → next round begins.</li>
+        </ol>
+
+    </section>
+
+    <footer>
+        <p class="titles">Data analyst | Researcher | Data Engineer | Machine Learning Engineer | Statistician</p>
+        <p class="copyright">&copy; 2025 Shivogo John. All rights reserved.</p>
+    </footer>
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const flashMessages = document.querySelector('.flashes');
+                    if (flashMessages) {
+                        setTimeout(function() {
+                            flashMessages.style.display = 'none';
+                        }, 3000); // 3000 milliseconds = 3 seconds
+                    }
+                });
+            </script>
+        {% endif %}
+    {% endwith %}
+    <script>
+        const textElement = document.getElementById('typed-text');
+        const fullText = "Glad you dropped by. I'm passionate about making sense of data and building impactful solutions with it. Feel free to have a look around.";
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < fullText.length) {
+                textElement.textContent += fullText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 15); // Adjust typing speed here (milliseconds)
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', typeText);
+
+        // Profile picture enlargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePicture = document.querySelector('.profile-picture');
+            const body = document.body;
+            let overlay = document.querySelector('.overlay');
+
+            // Create overlay if it doesn't exist
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                body.appendChild(overlay);
+            }
+
+            profilePicture.addEventListener('click', function() {
+                profilePicture.classList.toggle('enlarged');
+                overlay.classList.toggle('active');
+                // Prevent scrolling when enlarged
+                body.style.overflow = profilePicture.classList.contains('enlarged') ? 'hidden' : '';
+            });
+
+            overlay.addEventListener('click', function() {
+                profilePicture.classList.remove('enlarged');
+                overlay.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html>

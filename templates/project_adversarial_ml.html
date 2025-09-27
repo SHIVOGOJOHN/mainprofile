@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adversarial ML Defense Systems</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="profile-container">
+                <img src="https://avatars.githubusercontent.com/u/169674746?s=400&u=98982bc9fafdfbc084b6426148a421fe35c80384&v=4" alt="Profile Picture" class="profile-picture">
+                <div class="header-text">
+                    <a href="{{ url_for('index') }}" style="text-decoration: none; color: inherit;"><h1>Shivogo John</h1></a>
+                    <p class="job-title">Machine Learning Engineer & Researcher</p>
+                    <p class="welcome-message"><span id="typed-text"></span></p>
+                </div>
+            </div>
+            <div class="social-links-bottom">
+                <a href="https://github.com/SHIVOGOJOHN" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shivogo-john-256473329/" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:shivogojohn@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+254704234829" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-phone"></i></a>
+                
+                <a href="https://medium.com/@shivogojohn" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i></a>
+            </div>
+            </div>
+    </header>
+
+    <section id="project-details">
+        <a href="{{ url_for('all_projects') }}" class="btn" style="margin-bottom: 1rem;"><i class="fas fa-arrow-left"></i> Back to All Projects</a>
+        
+        <h1>Adversarial ML Defense Systems</h1>
+
+        <h2>Goal</h2>
+        <p>Detect and mitigate adversarial attacks against deployed ML models across perception and NLP systems.</p>
+
+        <h2>Data & Inputs</h2>
+        <ul>
+            <li>Model inputs and outputs, confidence distributions, feature attributions.</li>
+            <li>Known adversarial examples and attack signatures.</li>
+            <li>Model internals when available: gradients, activations.</li>
+            <li>System-level telemetry: request patterns, user behavior, source IPs.</li>
+        </ul>
+
+        <h2>Methods and Models</h2>
+        <ul>
+            <li>Online detection: ensemble detectors using gradient-based, statistical, and representation-space checks.</li>
+            <li>Robust training: adversarial training with diverse perturbations and randomized smoothing.</li>
+            <li>Active defenses: input sanitization, input diffusion, and model ensemble voting.</li>
+            <li>Game-theoretic defenders: training a defender policy against an adaptive adversary.</li>
+            <li>Forensics module: reconstruct attack vectors and patch models.</li>
+        </ul>
+
+        <h2>System Architecture</h2>
+        <ul>
+            <li>Inference gateway with defense layer intercepting requests for checks and sanitization.</li>
+            <li>Monitoring and alerting for anomalous input distributions.</li>
+            <li>Re-training pipeline for quick model updates with verified patches.</li>
+            <li>Incident response console and simulated red-team environment.</li>
+        </ul>
+
+        <h2>Implementation Challenges</h2>
+        <ul>
+            <li>Attackers adapt; defenses can be evaded as new methods surface.</li>
+            <li>Trade-off between robustness and model accuracy.</li>
+            <li>Latency introduced by defense layers can be unacceptable for real-time apps.</li>
+        </ul>
+
+        <h2>Devil’s Advocate / Risks</h2>
+        <ul>
+            <li>Arms race nature may make permanence elusive; defense will be partial and transient.</li>
+            <li>Overfitting defenses to known attacks may give false security.</li>
+        </ul>
+
+        <h2>Why Future-Oriented</h2>
+        <p>As ML is integrated into high-stakes systems, adversarial resilience becomes non-negotiable.</p>
+
+    </section>
+
+    <footer>
+        <p class="titles">Data analyst | Researcher | Data Engineer | Machine Learning Engineer | Statistician</p>
+        <p class="copyright">&copy; 2025 Shivogo John. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const textElement = document.getElementById('typed-text');
+        const fullText = "Glad you dropped by. I'm passionate about making sense of data and building impactful solutions with it. Feel free to have a look around.";
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < fullText.length) {
+                textElement.textContent += fullText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 15); // Adjust typing speed here (milliseconds)
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', typeText);
+
+        // Profile picture enlargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePicture = document.querySelector('.profile-picture');
+            const body = document.body;
+            let overlay = document.querySelector('.overlay');
+
+            // Create overlay if it doesn't exist
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                body.appendChild(overlay);
+            }
+
+            profilePicture.addEventListener('click', function() {
+                profilePicture.classList.toggle('enlarged');
+                overlay.classList.toggle('active');
+                // Prevent scrolling when enlarged
+                body.style.overflow = profilePicture.classList.contains('enlarged') ? 'hidden' : '';
+            });
+
+            overlay.addEventListener('click', function() {
+                profilePicture.classList.remove('enlarged');
+                overlay.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+    </script>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const flashMessages = document.querySelector('.flashes');
+                    if (flashMessages) {
+                        setTimeout(function() {
+                            flashMessages.style.display = 'none';
+                        }, 3000); // 3000 milliseconds = 3 seconds
+                    }
+                });
+            </script>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
