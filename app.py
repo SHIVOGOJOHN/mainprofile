@@ -221,5 +221,4 @@ def contact():
 
     return render_template('index.html') # Render index.html for GET requests to /contact or if there's an error
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
