@@ -3,6 +3,8 @@ from flask_mail import Mail, Message
 import os
 import dotenv
 
+dotenv.load_dotenv()
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv("SECRET_KEY") # Change this to a strong, random key
 
